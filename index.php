@@ -110,7 +110,7 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Les coatchs </h2>
                     <h3 class="section-subheading text-muted">présentation des différents coatchs</h3>
-                    <a href="pagePresentation.php">Suite</a>
+                    <a href="pagePresentation.php">Voir plus </a>
                 </div>
             </div>
             <div class="row text-center">

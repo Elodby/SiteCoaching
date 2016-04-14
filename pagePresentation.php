@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -32,7 +31,6 @@
     <![endif]-->
 
 </head>
-
 <body id="page-top" class="index">
 
     <!-- Navigation -->
@@ -64,16 +62,16 @@
                         <a class="page-scroll" href="index.php#lescours">LES COURS</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#tarifsplanning">TARIFS / PLANNING</a>
+                        <a class="page-scroll" href="index.php#tarifsplanning">TARIFS / PLANNING</a>
                     </li>             
                     <li>
-                        <a class="page-scroll" href="#temoignages">TEMOIGNAGES</a>
+                        <a class="page-scroll" href="index.php#temoignages">TEMOIGNAGES</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#partenaires">PARTENAIRES</a>
+                        <a class="page-scroll" href="index.php#partenaires">PARTENAIRES</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">NOUS CONTACTER</a>
+                        <a class="page-scroll" href="index.php#contact">NOUS CONTACTER</a>
                     </li>
                 </ul>
             </div>
