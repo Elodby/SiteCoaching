@@ -1,3 +1,12 @@
+<?php 
+session_start();
+include("Models/connection_bdd.php"); 
+include("Models/Categories.php"); 
+
+$categories = Categories::getAllCategories();
+//var_dump($categories);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,13 +33,6 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body id="page-top" class="index">
@@ -55,10 +57,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#lescoachs">LA COACH</a>
+                        <a class="page-scroll" href="#lescoachs">COACH</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#lescours">LA METHODOLOGIE</a>
+                        <a class="page-scroll" href="#lamethodologie">LA METHODOLOGIE</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#lesobjectifs">LES OBJECTIFS</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#tarifsplanning">TARIFS / PLANNING</a>
@@ -80,45 +85,39 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <!--<div class="intro-message">
-                    <h1>Landing Page</h1>
-                    <h3>A Template by Start Bootstrap</h3>
-                    <hr class="intro-divider">
-                    <ul class="list-inline intro-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Facebook</span></a>
-                        </li>
-                    </ul>
-                </div>-->
             </div>
         </div>
     </header>
 
-    <!-- temoignages Grid Section -->
     <section id="lescoachs" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">La coach</h2>
+                    <h2 class="section-heading">Coach</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
             <div class="row">
-                <p>Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                <div class="col-lg-12">
+                    <div>
+                       <p> Hacque adfabilitate confisus cum eadem postridie feceris, ut incognitus haerebis et repentinus, hortatore illo hesterno clientes numerando, qui sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo.</p>
+                    </div>
+                    <div id="divCoach" class="hiddenText">
+                     <p>   sis vel unde venias diutius ambigente agnitus vero tandem et adscitus in amicitiam si te salutandi adsiduitati dederis triennio indiscretus et per tot dierum defueris tempus, reverteris ad paria perferenda, nec ubi esses interrogatus et quo tandem miser discesseris, aetatem omnem frustra in stipite conteres summittendo. </p>
+                    </div>
+                    <a id="learnmore" class="btn btn-primary btn-lg btnmore" role="button">En savoir plus</a>
+                </div>
+                
             </div>
         </div>
     </section>
 
     <!-- Les cours Section -->
-    <section id="lescours">
+    <section id="lamethodologie">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">La métodologie</h2>
+                    <h2 class="section-heading">La méthodologie</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
@@ -128,7 +127,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">E-Commerce</h4>
+                    <h4 class="service-heading">Item 1</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
                 <div class="col-md-4">
@@ -136,7 +135,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Responsive Design</h4>
+                    <h4 class="service-heading">Item 2</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
                 <div class="col-md-4">
@@ -144,7 +143,44 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Web Security</h4>
+                    <h4 class="service-heading">Item 2</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lesobjectifs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Les objectifs</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Remise en forme</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Perte de poids</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Renforcement musculaire</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
             </div>
@@ -199,8 +235,8 @@
                         <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
                     </a>
                     <div class="temoignages-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
+                        <h4>Temoignage 1</h4>
+                        <p class="text-muted">Lorem ipsum dolor</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 temoignages-item">
@@ -213,8 +249,8 @@
                         <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
                     </a>
                     <div class="temoignages-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Temoignage 2</h4>
+                        <p class="text-muted">Lorem ipsum dolor</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 temoignages-item">
@@ -227,8 +263,8 @@
                         <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
                     </a>
                     <div class="temoignages-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Temoignage 3</h4>
+                        <p class="text-muted">Lorem ipsum dolor</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 temoignages-item">
@@ -241,8 +277,8 @@
                         <img src="img/portfolio/golden.png" class="img-responsive" alt="">
                     </a>
                     <div class="temoignages-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Temoignage 4</h4>
+                        <p class="text-muted">Lorem ipsum dolor</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 temoignages-item">
@@ -255,8 +291,8 @@
                         <img src="img/portfolio/escape.png" class="img-responsive" alt="">
                     </a>
                     <div class="temoignages-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Temoignage 5</h4>
+                        <p class="text-muted">Lorem ipsum dolor</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 temoignages-item">
@@ -269,8 +305,8 @@
                         <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
                     </a>
                     <div class="temoignages-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Temoignage 6</h4>
+                        <p class="text-muted">Lorem ipsum dolor</p>
                     </div>
                 </div>
             </div>
@@ -565,6 +601,19 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+    <script type="text/javascript">
+        $("#learnmore").click(function(){
+            if ($("#divCoach").hasClass("hiddenText")) {
+                $("#divCoach").removeClass("hiddenText").addClass("visibleText");
+                $("#learnmore").text("Reduire");
+            }
+            else{
+                $("#divCoach").removeClass("visibleText").addClass("hiddenText");
+               $("#learnmore").text('En savoir plus');
+            }
+        });
+
+    </script>
 
 </body>
 
