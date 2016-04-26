@@ -74,6 +74,16 @@ $categories = Categories::getAllCategories();
                     <li>
                         <a class="page-scroll" href="#partenaires">PARTENAIRES</a>
                     </li>
+                  <!--  <li>
+                        <a href="#" onclick="window.open('questionnaire.php')">CONTACT Onglet</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="javascript:ouvrirFenetre();"> CONTACT Fenetre</a>
+                    </li>-->
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#myModal"> CONTACT</a>
+                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -88,6 +98,34 @@ $categories = Categories::getAllCategories();
             </div>
         </div>
     </header>
+
+    
+
+    <!-- Services Section -->
+   <!-- <section id="lasalle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Les coatchs </h2>
+                    <h3 class="section-subheading text-muted">présentation des différents coatchs</h3>
+                    <?php /*
+                    foreach($rows as $row){
+                            echo 'id_article: ' . $row['ID_ARTICLE'] . '<br>';
+                            echo 'id_categorie: ' . $row['ID_CATEGORIE'] . '<br>';
+                            echo 'id_temoignage: ' . $row['ID_TEMOIGNAGE'] . '<br>';
+                            echo 'title: ' . $row['TITLE'] . '<br>';
+                            echo 'description: ' . $row['DESCRIPTION'] . '<br>';
+                            echo 'introduction: ' . $row['INTRODUCTION'] . '<br>';
+                       } */
+                   ?>
+                    <a href="pagePresentation.php">Plus</a>
+                </div>
+            </div>
+            <div class="row text-center">
+                
+            </div>
+        </div>
+    </section>-->
 
     <section id="lescoachs" class="bg-light-gray">
         <div class="container">
@@ -555,6 +593,67 @@ $categories = Categories::getAllCategories();
         </div>
     </div>
 
+<!-- FORMULAIRE -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Questionnaire</h4>
+      </div>
+      <div class="modal-body">
+        <p><form class="form-horizontal">
+    <fieldset>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="title">Titre</label>  
+      <div class="col-md-4">
+      <input id="title" name="title" type="text" placeholder="Titre" class="form-control input-md">
+        
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="email">E-mail</label>  
+      <div class="col-md-4">
+      <input id="email" name="email" type="text" placeholder="yourmail@mail.fr" class="form-control input-md">
+        
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="content">Contenu</label>
+      <div class="col-md-4">                     
+        <textarea class="form-control" id="content" name="content"></textarea>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="buttonSend"></label>
+      <div class="col-md-4">
+        <button id="buttonSend" name="buttonSend" class="btn btn-success">Envoyer</button>
+      </div>
+    </div>
+
+    </fieldset>
+    </form>
+    </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+</div>
+
+
     <footer>
         <div class="container">
             <div class="row">
@@ -613,6 +712,12 @@ $categories = Categories::getAllCategories();
             }
         });
 
+    </script>
+    <script language="javascript">
+    function ouvrirFenetre()
+    {
+        window.open("questionnaire.php", "popup", "toolbar=0, location=0, directories=0, status=0, scrollbars=0, resizable=0, copyhistory=0, width=500, height=350,screenX=200,screenY=200");
+    }
     </script>
 
 </body>
